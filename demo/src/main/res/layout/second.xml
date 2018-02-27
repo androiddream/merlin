@@ -34,11 +34,4 @@
     android:layout_gravity="center_horizontal"
     android:text="@string/get_network_subtype" />
 
-  <Button
-    android:id="@+id/to_second_activity"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:text="@string/to_second_activity" />
-
 </LinearLayout>

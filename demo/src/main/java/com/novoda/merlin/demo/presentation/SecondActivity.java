@@ -1,6 +1,5 @@
 package com.novoda.merlin.demo.presentation;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -14,7 +13,7 @@ import com.novoda.merlin.demo.R;
 import com.novoda.merlin.demo.connectivity.display.NetworkStatusDisplayer;
 import com.novoda.merlin.demo.presentation.base.MerlinActivity;
 
-public class DemoActivity extends MerlinActivity implements Connectable, Disconnectable, Bindable {
+public class SecondActivity extends MerlinActivity implements Connectable, Disconnectable, Bindable {
 
     private NetworkStatusDisplayer networkStatusDisplayer;
     private MerlinsBeard merlinsBeard;
@@ -23,7 +22,7 @@ public class DemoActivity extends MerlinActivity implements Connectable, Disconn
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.second);
 
         viewToAttachDisplayerTo = findViewById(R.id.displayerAttachableView);
         merlinsBeard = MerlinsBeard.from(this);
@@ -33,7 +32,6 @@ public class DemoActivity extends MerlinActivity implements Connectable, Disconn
         findViewById(R.id.wifi_connected).setOnClickListener(wifiConnectedOnClick);
         findViewById(R.id.mobile_connected).setOnClickListener(mobileConnectedOnClick);
         findViewById(R.id.network_subtype).setOnClickListener(networkSubtypeOnClick);
-        findViewById(R.id.to_second_activity).setOnClickListener(toSecondActivityOnClick);
     }
 
     private final View.OnClickListener networkStatusOnClick = new View.OnClickListener() {
@@ -76,15 +74,6 @@ public class DemoActivity extends MerlinActivity implements Connectable, Disconn
         @Override
         public void onClick(View view) {
             networkStatusDisplayer.displayNetworkSubtype(viewToAttachDisplayerTo);
-        }
-    };
-
-    private final View.OnClickListener toSecondActivityOnClick = new View.OnClickListener() {
-
-        @Override
-        public void onClick(View view) {
-            Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-            startActivity(intent);
         }
     };
 

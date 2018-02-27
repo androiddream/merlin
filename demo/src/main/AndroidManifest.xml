@@ -27,6 +27,10 @@
       android:label="Demo Activity" />
 
     <activity
+      android:name=".presentation.SecondActivity"
+      android:label="Second Activity" />
+
+    <activity
       android:name=".presentation.RxJavaDemoActivity"
       android:label="RxJava Demo Activity" />
 
